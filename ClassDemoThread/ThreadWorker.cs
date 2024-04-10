@@ -8,6 +8,9 @@ namespace ClassDemoThreadTask
 {
     public class ThreadWorker
     {
+        private object lockObj = new object();
+
+
         /*
          * Delegate
          */
@@ -71,7 +74,14 @@ namespace ClassDemoThreadTask
 
         private void Go()
         {
-            if (!done) {  done = true; Console.WriteLine("Done"); }
+            lock (lockObj) { 
+                if (!done) 
+                {
+                    Thread.Sleep(1);
+                    done = true; 
+                    Console.WriteLine("Done"); 
+                }
+            }
         }
 
 

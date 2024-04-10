@@ -4,10 +4,10 @@ using ClassDemoThreadTask;
 
 ThreadWorker worker = new ThreadWorker();
 
-worker.TestDelegate();
+//worker.TestDelegate();
 
 
-//worker.ExampleThread();
+worker.ExampleThread();
 
 //worker.StartTaskTest();
 
